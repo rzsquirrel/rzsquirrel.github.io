@@ -77,7 +77,11 @@
                     <div class="intro-text">
                         <h1 class="name">Welcome!</h1>
                         <hr class="star-light">
-                        <span class="skills">Hi. I'm Reed, currently a student studying Statistics and Machine Learning at Carnegie Mellon University. Feel free to take a look at some of the things I've done.</span>
+                        <span class="skills">
+                        Hi. I'm Reed, currently a Master's student in Statistics at the University of Washington in Seattle.<br>
+                        I completed my undergrad in Statistics and Machine Learning at Carnegie Mellon University.<br>
+                        Feel free to take a look at some of the things I've done.
+                        </span>
                     </div>
                 </div>
             </div>
@@ -104,7 +108,17 @@
             </div>
             <div class="row">
                 <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/portfolio/ingredient_fusion.png" class="img-responsive" alt="Nothing here yet">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
@@ -124,23 +138,13 @@
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
                         <img src="img/portfolio/diving_into_kaggle.png" class="img-responsive" alt="kaggle dive png">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/n-a.png" class="img-responsive" alt="Nothing here yet">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -178,7 +182,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-4 col-lg-offset-2">
-                    <p>I program mainly in python (3+ years) and R (1+ years). I've also dabbled in web app dev and Tensorflow, among other topics.</p>
+                    <p>I program mainly in python (5+ years) and R (3+ years). I've also dabbled in web app dev and Tensorflow, among other topics.</p>
                 </div>
                 <div class="col-lg-4">
                     <p>In my spare time, I enjoy reading, listening to classical music, and petting dogs.</p>
@@ -201,7 +205,7 @@
                     <p>Email: <img src="img/eaddr.png" style="width:36%"></p>
                     <!--<p>LinkedIn: <a href="https://www.linkedin.com/in/reedzhang/" target="_blank">https://www.linkedin.com/in/reedzhang/</a></p>-->
                     <br>
-                    <p>Work/Internships/Research: I'm looking for something interesting to work on next summer (2018). Feel free to contact me. (Email is preferred.)</p>
+                    <p>Work/Internships/Research: I'm looking for something interesting to work next summer (2020)! Feel free to E-mail me.</p>
                 </div>
             </div>
         </div>
@@ -213,12 +217,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        Site based on a template from <a href="http://startbootstrap.com" target="_blank">startbootstrap.com</a>.
-                        Icons from <a href="http://flaticon.com" target="_blank">flaticon.com</a>.<br>
-                        Thumbnail images aren't mine, I just find them online and mash them together in silly ways.
-                    </div>
-                    <div class="col-lg-12">
-                        &copy; 2017 Reed Zhang
+                        <!--Site based on a template from <a href="http://startbootstrap.com" target="_blank">startbootstrap.com</a>.-->
+                        <!--Icons from <a href="http://flaticon.com" target="_blank">flaticon.com</a>.<br>-->
+                        Disclaimer: Thumbnail images aren't mine, I just find them online and mash them together in silly ways.
                     </div>
                 </div>
             </div>
@@ -235,6 +236,91 @@
     <!-- ********************************** -->
     <!-- ******** Portfolio Modals ******** -->
     <!-- ********************************** -->
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Ingredient Associator</h2>
+                            <hr class="star-primary">
+                            <img src="img/portfolio/ingredient_fusion.png" class="img-responsive img-centered" alt="">
+                            <p>
+                                I often wonder why certain ingredients are so good together (like chocolate + nuts) and whether there are flavor profiles we simply haven't tried yet. To discover interesting combinations for myself, I downloaded and cleaned a <a href="https://www.kaggle.com/hugodarwood/epirecipes" target="_blank">dataset of 20,052 recipes</a>, looking for subsets of ingredients that appeared together more frequently than we might expect.<br><br>
+                                This task should remind us of Association Rule Learning, which is actually what I had initially planned to do. However, it's possible to learn rules going in one direction (like {A, B} -> {C, D}) but not the other (like {C, D} -/> {A, B}), which wouldn't make sense in the context of flavor profiles. Therefore, I defined my task to be finding important subsets of ingredients (like {A, B, C, D}) without worrying about directional association. I scored each subset based on:<br>
+                                i. the observed number of appearances in our dataset, and<br>
+                                ii. the expected number of appearances under the assumption that ingredients are used independently of each other.<br><br>
+                                I modified the Apriori algorithm (normally used to learn association rules) to look for high-scoring subsets of ingredients. My code can be found <a href="https://github.com/rzsquirrel/ingredient_associator" target="_blank">here</a>.<br><br>
+                                You can see a few example combinations below, listed in increasing order of unnexpectedness:<br><br>
+                                {mayonnaise, tuna} - Not surprising, but it serves as a sanity check that things are working correctly.<br>
+                                {chicken, celery, carrot} - Again, not surprised to see these together.<br>
+                                {blueberry, lemon} - Not sure I've ever tried this one, but it definitely sounds good.<br>
+                                {chocolate, almond, orange} - What is orange doing here? It has to be some sort of filling/frosting for a pastry right? I'm not completely sold on this one, but I still want to try it someday.<br>
+                            </p>
+                            <ul class="list-inline item-details">
+                                <li>Collaboration:
+                                    <strong><a href="https://rzsquirrel.github.io">Solo</a>
+                                    </strong>
+                                </li>
+                                <li>Date:
+                                    <strong><a href="https://rzsquirrel.github.io">July 2019</a>
+                                    </strong>
+                                </li>
+                                <li>Topics:
+                                    <strong><a href="https://rzsquirrel.github.io">Python</a>
+                                    </strong>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Summer 2017 - Internship</h2>
+                            <hr class="star-primary">
+                            <img src="img/portfolio/dog_tf.png" class="img-responsive img-centered" alt="dog tensorflow png">
+                            <p>I worked on text classfication systems at a Question.ai, a SF startup. This mostly involved scraping data and making sure it's quality was OK. For that, I used Scrapy. Initially, I spent a lot of time training neural nets in Tensorflow, which didn't do too great. I later moved on to try Fasttext, a methodology published by Facebook Research in 2016. It gave much better results, and it was fast, so we pushed the model onto the demo server.</p>
+                            <ul class="list-inline item-details">
+                                <li>Collaboration:
+                                    <strong><a href="https://rzsquirrel.github.io">Question.ai engineering team</a>
+                                    </strong>
+                                </li>
+                                <li>Date:
+                                    <strong><a href="https://rzsquirrel.github.io">Summer 2017</a>
+                                    </strong>
+                                </li>
+                                <li>Topics:
+                                    <strong><a href="https://rzsquirrel.github.io">Python, Deep Learning</a>
+                                    </strong>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
@@ -274,7 +360,7 @@
                                     </strong>
                                 </li>
                                 <li>Topics:
-                                    <strong><a href="https://rzsquirrel.github.io">Data Science, R</a>
+                                    <strong><a href="https://rzsquirrel.github.io">R</a>
                                     </strong>
                                 </li>
                             </ul>
@@ -286,43 +372,6 @@
         </div>
     </div>
     <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Summer 2017 - Internship in SF</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/dog_tf.png" class="img-responsive img-centered" alt="dog tensorflow png">
-                            <p>I worked on text classfication systems at a Question.ai, a SF startup. This mostly involved scraping data and making sure it's quality was OK. For that, I used Scrapy. Initially, I spent a lot of time training neural nets in Tensorflow, which didn't do too great. I later moved on to try Fasttext, a methodology published by Facebook Research in 2016. It gave much better results, and it was fast, so we pushed the model onto the demo server.</p>
-                            <ul class="list-inline item-details">
-                                <li>Collaboration:
-                                    <strong><a href="https://rzsquirrel.github.io">Question.ai engineering team</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="https://rzsquirrel.github.io">Summer 2017</a>
-                                    </strong>
-                                </li>
-                                <li>Topics:
-                                    <strong><a href="https://rzsquirrel.github.io">python, deep learning</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -352,44 +401,7 @@
                                     </strong>
                                 </li>
                                 <li>Topics:
-                                    <strong><a href="https://rzsquirrel.github.io">R, python</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>[Project Title]</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/n-a.png" class="img-responsive img-centered" alt="">
-                            <p>[There's nothing to be seen here.]</p>
-                            <ul class="list-inline item-details">
-                                <li>Collaboration:
-                                    <strong><a href="https://rzsquirrel.github.io">nothing</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="https://rzsquirrel.github.io">June 2017</a>
-                                    </strong>
-                                </li>
-                                <li>Topics:
-                                    <strong><a href="https://rzsquirrel.github.io">nothing, nothing</a>
+                                    <strong><a href="https://rzsquirrel.github.io">R, Python</a>
                                     </strong>
                                 </li>
                             </ul>
